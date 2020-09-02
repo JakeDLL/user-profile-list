@@ -1,0 +1,10 @@
+function showPage
+    pass in list and page
+    set start_index to (page parameter * items per page) - items per page
+    set end_index to page parameter * items per page
+    set student_list to value of ul element with class name of student-list
+    call innerHTML method on ul to set value as `` empty string
+
+    for each student in list
+        if current index is greater than or equal to start_index and current index is less than or equal to end_index
+            
