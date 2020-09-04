@@ -37,28 +37,6 @@ function showPage(list, page) {
                </div>
             </li>
          `;
-         // let li = document.createElement('li');
-         // li.className = "student-item cf";
-         // let detailsDiv = document.createElement('div');
-         // detailsDiv.className = "student-details";
-         // let avatar = document.createElement('img');
-         // avatar.className = "avatar";
-         // let h3 = document.createElement('h3');
-         // let email = document.createElement('span');
-         // email.className = "email";
-         // let joinedDetailsDiv = document.createElement('div');
-         // joinedDetailsDiv.className = "joined-details";
-         // let date = document.createElement('span');
-         // date.className = "date";
-
-         // joinedDetailsDiv.appendChild(date);
-         // detailsDiv.appendChild(avatar);
-         // detailsDiv.appendChild(h3);
-         // detailsDiv.appendChild(email);
-         // li.appendChild(detailsDiv);
-         // li.appendChild(joinedDetailsDiv);
-
-
          studentList.innerHTML += studentLi;
       }
    }
