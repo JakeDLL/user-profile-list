@@ -20,8 +20,8 @@ This function will create and insert/append the elements needed to display a "pa
 function showPage(list, page) {
    let startIndex = (page * perPage) - perPage;
    let endIndex = page * perPage;
-   const studentList = document.querySelector('.student-list');
-
+   const studentList = document.querySelector('ul.student-list');
+   studentList.innerHTML = '';
    for (let i = 0; i < list.length; i++) {
       if (i >= startIndex && i < endIndex) {
          const student = list[i];
@@ -64,15 +64,42 @@ function showPage(list, page) {
    }
 }
 
-
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
-function addPagination() {
-   
+function addPagination(list) {
+   const numOfButtons = Math.ceil(list.length / 9);
+   const linkList = document.querySelector('ul.link-list');
+   linkList.innerHTML = '';
+
+   for (let i = 0; i < numOfButtons; i++) {
+      let button = `
+         <li>
+            <button type="button">${i + 1}</button>
+         </li>
+      `;
+      linkList.innerHTML += button
+   }
+   const firstPageButton = linkList.firstElementChild;
+   firstPageButton.className = "active";
+
+   linkList.addEventListener('click', (event) => {
+      if (event.target.tagName === 'BUTTON') {
+         const button = event.target;
+         const buttonList = linkList.children;
+         for (let i = 0; i < buttonList.length; i++) {
+            const buttonElement = buttonList[i].querySelector('button');
+            buttonElement.className = '';
+         }
+         button.className = 'active';
+         showPage(data, button.textContent);
+      }
+   })
 }
 
-
 // Call functions
+
+showPage(data, 1);
+addPagination(data);
