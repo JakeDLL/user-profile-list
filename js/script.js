@@ -12,6 +12,22 @@ For assistance:
 */
 
 const perPage = 9;
+const header = document.querySelector('header');
+const searchBarHTML = `
+   <label for="search" class="student-search">
+      <input type="text" id="search" placeholder="Search by name...">
+      <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+   </label>
+`;
+header.insertAdjacentHTML('beforeend', searchBarHTML);
+const searchBar = header.querySelector('#search')
+console.log(searchBar);
+searchBar.addEventListener('keyup', (event) => {
+   const inputValue = event.target.value.toLowerCase();
+   const filteredList = [];
+
+});
+
 
 /*
 Create the `showPage` function
