@@ -21,11 +21,20 @@ const searchBarHTML = `
 `;
 header.insertAdjacentHTML('beforeend', searchBarHTML);
 const searchBar = header.querySelector('#search')
-console.log(searchBar);
+const filteredList = [];
 searchBar.addEventListener('keyup', (event) => {
    const inputValue = event.target.value.toLowerCase();
-   const filteredList = [];
 
+   for (let i = 0; i < data.length; i++) {
+      const student = data[i];
+      const firstName = student.name.first.toLowerCase();
+      const lastName = student.name.first.toLowerCase();
+      console.log(`${firstName} ${lastName}`);
+      if (student.name.first.includes(inputValue) || student.name.last.includes(inputValue)) {
+         filteredList.push(student);
+      }
+   }
+   
 });
 
 
