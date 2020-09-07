@@ -20,7 +20,7 @@ const searchBarHTML = `
 `;
 header.insertAdjacentHTML('beforeend', searchBarHTML);
 
-const searchBar = header.querySelector('#search-bar');
+const searchBar = header.querySelector('#search');
 const searchButton = header.querySelector('#search-button');
 
 const studentList = document.querySelector('ul.student-list');
@@ -37,8 +37,8 @@ function search(searchInput, list) {
 
    // this loop is to iterate through the data list of students
    for (let i = 0; i < list.length; i++) {
-       const student = list[i]
-       const studentName = `${student.name.first} ${student.name.Last}`.toLowerCase();
+       const student = list[i];
+       const studentName = `${student.name.first} ${student.name.last}`.toLowerCase();
 
        // the conditional statement checks if the search bar is not empty and if the current student has the value of the search bar in their name(s)
        // if both conditions are true it appends the current student to the filtered list
