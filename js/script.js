@@ -134,7 +134,7 @@ function addPagination(list) {
          }
          button.className = 'active';
 
-         showPage(data, button.textContent);
+         showPage(list, button.textContent);
       }
    });
 }
