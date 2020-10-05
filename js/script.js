@@ -114,7 +114,7 @@ function addPagination(list) {
             <button type="button">${i + 1}</button>
          </li>
       `;
-      linkList.innerHTML += button
+      linkList.innerHTML += button;
    }
 
    // First page is displayed so the first button is set as active
